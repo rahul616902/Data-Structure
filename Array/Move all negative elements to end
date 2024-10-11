@@ -1,0 +1,37 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution {
+  public:
+    void segregateElements(vector<int>& arr) {
+        // Your code goes here
+        int n = arr.size();
+
+        // Create an empty vector to store result
+        vector<int> temp(n);
+
+        // Traverse array and store positive elements in temp array
+        int j = 0; // index of temp
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= 0) {
+                temp[j++] = arr[i];
+            }
+        }
+
+        // Store negative elements in temp array
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < 0) {
+                temp[j++] = arr[i];
+            }
+        }
+
+        // Copy contents of temp[] to arr[]
+        for (int i = 0; i < n; i++) {
+            arr[i] = temp[i];
+        }
+    }
+};
+

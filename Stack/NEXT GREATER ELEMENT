@@ -1,0 +1,26 @@
+
+     
+     // using stack in O(n) time
+     stack<int>st;
+     vector<long long>ans(n,-1);
+     
+     for(int i=0 ; i<n ; i++){
+         
+         if(st.empty()){
+             st.push(i);
+         }else{
+             
+             // stack not empty
+             while(!st.empty() && arr[st.top()] < arr[i]){
+                 
+                 ans[st.top()] = arr[i];
+                 st.pop();
+             }
+             
+             st.push(i);
+         }
+     }
+     
+     return ans;
+        
+    }

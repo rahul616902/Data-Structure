@@ -1,0 +1,33 @@
+//{ Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    int removeConsecutiveSame(vector<string>& arr) {
+        // Your code goes here
+        stack<string>st;
+        
+        for(int i=0; i<arr.size();i++){
+            
+            if(!st.empty() && arr[i]==st.top()){
+                st.pop();
+            }else{
+                st.push(arr[i]);
+            }
+        }
+        
+        int count=0;
+        while(!st.empty()){
+            count++;
+            st.pop();
+        }
+        return count;
+    }
+};
+

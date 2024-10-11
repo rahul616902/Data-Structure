@@ -1,0 +1,38 @@
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h> 
+using namespace std; 
+
+
+// } Driver Code Ends
+//User function Template for C++
+
+class Solution{
+    
+    public:
+    vector<int> help_classmate(vector<int> arr, int n) 
+    { 
+        // Your code goes here
+        vector<int>ans(n, -1);    // it is necessary to initialised by -1 as a condition will be 
+        stack<int>st;             // will rich where there will be no smaller element for present elemeent
+    
+        
+        for(int i=0; i<n; i++){
+            
+            if(st.empty()){
+                st.push(i);
+            }
+            
+            while(!st.empty() && arr[i]<arr[st.top()]){
+                
+             ans[st.top()]  = arr[i];
+              st.pop();
+            }
+            
+            st.push(i);
+        }
+        
+        return ans;
+    } 
+};

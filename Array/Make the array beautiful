@@ -1,0 +1,34 @@
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+class Solution {
+  public:
+    vector<int> makeBeautiful(vector<int> arr) {
+        // code here
+        
+        stack<int>s;
+        
+        for(int i=0; i<arr.size();i++){
+            
+            if(!s.empty() && (s.top()>=0 && arr[i]<0 || s.top()<0 && arr[i]>=0)){
+                s.pop();
+            }
+            else{
+                s.push(arr[i]);
+            }
+         
+        }
+        
+        vector<int>ans(s.size());
+        int i=s.size()-1;
+        while(!s.empty()){
+            ans[i]=s.top();
+            i--;
+            s.pop();
+        }
+        return ans;
+    }
+};

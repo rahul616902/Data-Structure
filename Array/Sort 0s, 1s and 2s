@@ -1,0 +1,34 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution {
+  public:
+    void sort012(vector<int>& arr) {
+        
+        int low = 0;  // keeps tracks of zero elements 
+        
+        int start = 0;
+        int high = arr.size()-1;
+        
+        while(start<=high){
+            
+            if(arr[start]==0){
+                swap(arr[start], arr[low]);
+                start++, low++;
+            }
+            
+            else if(arr[start]==1){
+                start++;
+                
+            }else{
+                
+                swap(arr[start], arr[high]);
+                
+                high--;
+            }
+        }
+        
+    }
+};
+

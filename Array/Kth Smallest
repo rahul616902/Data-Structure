@@ -1,0 +1,31 @@
+class Solution {
+  public:
+    // arr : given array
+    // k : find kth smallest element and return using this function
+    int kthSmallest(vector<int> &arr, int k) {
+        
+        // by using priority queue O(nlog)
+        priority_queue<int>p;
+        
+        // step 1: push first k element in the array
+        for(int i=0; i<k;i++){
+            
+            p.push(arr[i]);
+            
+        }
+        
+        // step 2. Now compare the each and every element after k to the top i.e biggest element from the step1 array 
+        for(int i=k ; i<=arr.size()-1;i++){
+            
+            if(arr[i] < p.top()){
+                
+                // means top element ko hata do aur curr ko uske jagah dal do 
+                p.pop();
+                p.push(arr[i]);
+            }
+        }
+        // step3. return the smallest k element as the largest one from the group will be smallest k element 
+        return p.top();
+        
+    }
+};
