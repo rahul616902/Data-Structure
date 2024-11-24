@@ -15,7 +15,7 @@ class Solution {
         int n = mat.size();
         int m = mat[0].size();
         int count = 0;
-        int ans =-1;
+        int index =-1;
         
         int minCount = INT_MAX; 
         
@@ -32,11 +32,11 @@ class Solution {
             
             if(count<minCount){
                 minCount = count;
-                ans = i +1;
+                index = i +1;
             }
         }
         
-        return ans;
+        return index;
     }
 };
 
