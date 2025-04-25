@@ -1,21 +1,36 @@
 #include <bits/stdc++.h> 
-bool isArmstrong(int num) {
-   
-    int number = num;
-    int sum = 0;
-    int temp = num; // for finding total no to find power
-    int numDigits = 0;
-    while(temp>0){
-          numDigits++;
-          temp/=10;
-    }
+using namespace std;
+int main(){
 
-    while(number>0){
-        int digit = number%10;
-        
-        sum+= pow(digit,numDigits);
-        number/=10;
-    }
-    if(sum == num) return true;
-    else return false;
+
+// //3 12345678912345 a 334.23 14049.30493  int : 32 Bit integer.
+// // long long : 64 bit integer
+// // Char : 8 bit Characters & symbols
+// // Float : 32 bit real value
+// // Double : 64 bit real value
+
+// int a;
+// long long l;
+// char ch;
+// float f;
+// double d;
+// cin>>a>>l>>ch>>f>>d;
+// cout<<a<<endl;
+// cout<<l<<endl;
+// cout<<ch<<endl;
+// cout<<f<<endl;
+// cout<<d<<endl;
+
+
+
+int x,y;
+cin>>x>>y;
+
+int sum = x+y;
+int mul = x*y;
+int sub = x-y;
+
+cout<< x << ' + ' <<y<<" = "<<x+y<<endl;
+cout<< x << ' * ' <<y<<" = "<<x*y<<endl;
+cout<< x << ' - ' <<y<<" = "<<x-y<<endl;
 }
